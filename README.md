@@ -1,6 +1,6 @@
 # vue-keystroke
 
-Small little practice project that listens to keystrokes and displays the key name and code to the user.
+Small little practice project that listens to keystrokes and displays the key name and key code to the user.
 
 ## Recommended IDE Setup
 
