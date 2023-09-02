@@ -1,7 +1,9 @@
 <template>
     <div>
         <p>{{ props.label }}</p>
-        <h2>key.name</h2>
+        <h2>
+            <slot>Press any key</slot>
+        </h2>
     </div>
 </template>
 

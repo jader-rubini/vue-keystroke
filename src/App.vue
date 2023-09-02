@@ -1,5 +1,18 @@
 <script setup>
+import { ref } from 'vue'
 import KeyDisplay from './components/KeyDisplay.vue'
+
+const body = document.querySelector('body')
+const keyName = ref(null)
+const keyCode = ref(null)
+const placeholder = '…'
+
+function onKeyDown(e) {
+  keyName.value = e.key === ' ' ? 'Space' : e.key
+  keyCode.value = e.keyCode
+}
+
+body.addEventListener('keydown', onKeyDown)
 </script>
 
 <template>
@@ -7,8 +20,8 @@ import KeyDisplay from './components/KeyDisplay.vue'
     <h1>Press any key to see the magic happen</h1>
   </header>
   <section>
-    <key-display label="Key name"></key-display>
-    <key-display label="Key value"></key-display>
+    <key-display label="Key name">{{ keyName ? keyName : placeholder }}</key-display>
+    <key-display label="Key keyCode">{{ keyCode ? keyCode : placeholder }}</key-display>
   </section>
 </template>
 
