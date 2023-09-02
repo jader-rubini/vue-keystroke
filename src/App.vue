@@ -24,7 +24,7 @@ body.addEventListener('keydown', onKeyDown)
       <slot v-if="keyName">{{ keyName }}</slot>
     </key-display>
 
-    <key-display label="Key keyCode">
+    <key-display label="Key code">
       <slot v-if="keyCode">{{ keyCode }}</slot>
     </key-display>
   </section>
