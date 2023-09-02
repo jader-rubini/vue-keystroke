@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import KeyDisplay from './components/KeyDisplay.vue'
 
-const body = document.querySelector('body')
 const keyName = ref(null)
 const keyCode = ref(null)
 
@@ -11,7 +10,7 @@ function onKeyDown(e) {
   keyCode.value = e.keyCode
 }
 
-body.addEventListener('keydown', onKeyDown)
+window.addEventListener('keydown', onKeyDown)
 </script>
 
 <template>
