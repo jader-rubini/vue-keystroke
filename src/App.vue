@@ -17,7 +17,7 @@ body.addEventListener('keydown', onKeyDown)
 
 <template>
   <header>
-    <h1>Press any key to see the magic happen</h1>
+    <h1>Press any key</h1>
   </header>
   <section>
     <key-display label="Key name">{{ keyName ? keyName : placeholder }}</key-display>
