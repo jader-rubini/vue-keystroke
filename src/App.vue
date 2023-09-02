@@ -5,7 +5,6 @@ import KeyDisplay from './components/KeyDisplay.vue'
 const body = document.querySelector('body')
 const keyName = ref(null)
 const keyCode = ref(null)
-const placeholder = '…'
 
 function onKeyDown(e) {
   keyName.value = e.key === ' ' ? 'Space' : e.key
@@ -19,9 +18,15 @@ body.addEventListener('keydown', onKeyDown)
   <header>
     <h1>Press any key</h1>
   </header>
+
   <section>
-    <key-display label="Key name">{{ keyName ? keyName : placeholder }}</key-display>
-    <key-display label="Key keyCode">{{ keyCode ? keyCode : placeholder }}</key-display>
+    <key-display label="Key name">
+      <slot v-if="keyName">{{ keyName }}</slot>
+    </key-display>
+
+    <key-display label="Key keyCode">
+      <slot v-if="keyCode">{{ keyCode }}</slot>
+    </key-display>
   </section>
 </template>
 
